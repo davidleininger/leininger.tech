@@ -1,0 +1,45 @@
+form {
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "name email" "message message" "error error" "submit submit";
+}
+.contact-name {
+  grid-area: name;
+}
+.contact-email {
+  grid-area: email;
+}
+.contact-error {
+  color: var(--error);
+  grid-area: error;
+}
+.contact-message {
+  grid-area: message;
+}
+button[type="submit"] {
+  grid-area: submit;
+  justify-self: end;
+}
+label {
+  display: block;
+  margin-bottom: var(--space-3xs);
+}
+input, textarea {
+  border: 2px solid var(--primary);
+  background-color: var(--bg-subtle);
+  width: 100%;
+}
+:is(input, textarea):focus {
+  background-color: var(--bg);
+  border: 2px solid var(--accent);
+  outline-color: var(--accent);
+}
+:is(input, textarea):not(:focus).error {
+  background-color: var(--bg);
+  border: 2px solid var(--error);
+}
+/* 1Password goes crazy with their styles on autofill. Let's tone it down... */
+[data-com-onepassword-filled] {
+  -webkit-box-shadow: 0 0 0px 100px var(--bg) inset;
+}

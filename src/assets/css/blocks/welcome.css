@@ -1,0 +1,69 @@
+.welcome {
+  margin-bottom: var(--space-sm-lg);
+  margin-top: var(--space-sm-2xl);
+
+  /* prevent animation on page load */
+  --preloadDuration: 0s;
+  --animationDuration: 0.2s;
+  animation: preload 1ms var(--animationDuration) forwards;
+}
+
+@keyframes preload {
+  to {
+    --preloadDuration: unset;
+  }
+}
+.welcome :is(h2, h3, p) {
+  --flow-space: 0.4em;
+  color: var(--base-light);
+}
+.welcome :is(h2, h3) {
+  line-height: 1.25;
+}
+.small {
+  font-size: var(--text-xs);
+}
+.say-my-name{
+  display: inline-block;
+  animation: goodLuck var(--preloadDuration, var(--animationDuration)) forwards;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+  position: relative;
+  backface-visibility: hidden;
+}
+.say-my-name:hover {
+  animation: sayMyName var(--preloadDuration, var(--animationDuration)) forwards;
+  color: transparent;
+  cursor: help;
+  outline: none;
+}
+.say-my-name::after {
+  color: var(--primary);
+  content: 'Lining-er';
+  left: 0;
+  display: inline-block;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.2s;
+  letter-spacing: 0.002em;
+}
+.say-my-name:hover::after {
+  opacity: 1;
+  display: inline-block;
+}
+@keyframes sayMyName {
+  from { transform: skewX(-12deg) skewY(-1deg); color: var(--primary); }
+  20% { transform: skewX(12deg) skewY(1deg); color: var(--accent-dark); }
+  40% { transform: skewX(-12deg) skewY(-1deg); color: var(--primary); }
+  60% { transform: skewX(12deg) skewY(1deg); color: var(--accent);  }
+  80% { transform: skewX(-12deg) skewY(-1deg); color: var(--accent-dark); }
+  to { transform: skewX(0deg) skewY(0deg); color: transparent; }
+}
+@keyframes goodLuck {
+  from { transform: skewX(-12deg) skewY(-1deg); color: var(--accent-dark); }
+  20% { transform: skewX(12deg) skewY(1deg); color: var(--accent); }
+  40% { transform: skewX(-12deg) skewY(-1deg); color: var(--primary); }
+  60% { transform: skewX(12deg) skewY(1deg); color: var(--accent-dark);  }
+  80% { transform: skewX(-12deg) skewY(-1deg); color: var(--accent); }
+  to { transform: skewX(0deg) skewY(0deg); color: var(--base); }
+}

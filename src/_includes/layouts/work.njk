@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+templateClass: content-grid
+---
+<article class="flow prose">
+  <h1>{{ title }}</h1>
+
+  <p class="meta cluster">
+    <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time> &bull; {{ content | readingTime }} &bull; {% include "partials/_taglist.njk" %}
+  </p>
+
+  <img src="{{img}}" alt="Hero Image">
+
+  {{ content | safe }}
+</article>
+
+<aside class="btn-group-wrapper">
+  <div class="btn-group">
+    <a href="/work" class="ldt-btn">
+      <span>Back to Work</span></a>
+  </div>
+</aside>

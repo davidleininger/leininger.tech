@@ -1,0 +1,5 @@
+<nav aria-label="Pagination" class="pager cluster">
+  {%- for pageEntry in pagination.pages %}
+    <a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a>
+  {%- endfor %}
+</nav>

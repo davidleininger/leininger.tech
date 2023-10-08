@@ -1,0 +1,10 @@
+<span class="taglist cluster">
+  {%- for tag in tags | filterTagList -%}
+    {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+    {%- if showTagLinks -%}
+      <a href="{{ tagUrl | url }}" class="tag is-active">{{ tag }}</a>
+    {%- else -%}
+      <span>{{ tag }}</span>
+    {%- endif -%}
+  {%- endfor %}
+</span>

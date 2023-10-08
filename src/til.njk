@@ -1,0 +1,19 @@
+---
+layout: layouts/home.njk
+templateClass: content-list
+eleventyComputed:
+  title: Today I Lerned {% if pagination.pageNumber > 0 %} Page {{ pagination.pageNumber + 1 }}{% endif %} - Leininger.Tech
+pagination:
+  data: collections.til
+  size: 10
+  alias: posts
+permalink: "til{% if pagination.pageNumber > 0 %}/page-{{ pagination.pageNumber + 1}}{% endif %}/index.html"
+---
+
+<h1>Today I Learned</h1>
+<p>These are the little things I've learned along the way that have helped me. Maybe they will help you, but at a minimum, they will certainly help me again.</p>
+
+{% set postslist = posts %}
+{% include "postslist.njk" %}
+
+{% include "partials/_pager.njk" %}

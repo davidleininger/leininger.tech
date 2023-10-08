@@ -1,0 +1,62 @@
+.worklist {
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: repeat(auto-fit, minmax(min(22rem, 100%), 1fr));
+  margin: var(--gutter) 0;
+  padding: 0;
+}
+.worklist li {
+  transition: transform 0.2s ease-in-out;
+}
+.worklist li:is(:hover, :focus-within) {
+  transform: scale(1.05);
+}
+.worklist .worklist__link {
+  color: var(--headline);
+  font-size: var(--text-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+.worklist .worklist__link:is(:hover, :focus-within) {
+  color: var(--accent);
+}
+.worklist .work-item.hide {
+  display: none;
+}
+.worklist .taglist {
+  display: flex;
+}
+
+::view-transition-group(*) {
+  animation-timing-function: var(--spring);
+  animation-duration: 0.75s;
+}
+/* :only-child here makes the animation only fire if there's no pair for it */
+::view-transition-old(*):only-child {
+  animation: scale-out .25s ease-out forwards;
+}
+::view-transition-new(*):only-child {
+  opacity: 0;
+  animation:
+    fade-in .01s ease-in forwards,
+    scale-out .4s ease-in reverse;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

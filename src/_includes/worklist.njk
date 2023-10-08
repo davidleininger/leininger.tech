@@ -1,0 +1,25 @@
+<ul class="worklist" role="list" aria-label="Selected Work">
+  {% for work in worklist | reverse %}
+    {% set tags = work.data.tags %}
+    <li class="work-item link-overlay {{ work.data.workId }}" data-tags="{{ tags | join(' ') | replace('work ', '') }}" style="--work-id: {{ work.data.workId }}">
+      <img src="{{ work.url | url }}/{{ work.data.img | url }}" alt="{{ work.data.title }} preview" class="work-thumbnail">
+      <a href="{{ work.url | url }}" class="worklist__link" data-main-link="true">
+        {% if work.data.title %}
+          {{ work.data.title }}
+        {% else %}
+          <code>{{ work.url }}</code>
+        {% endif %}
+      </a>
+      <div class="taglist">
+        {% include "partials/_taglist.njk" %}
+      </div>
+      <style>
+        @media not (prefers-reduced-motion: reduce) {
+          [class~='{{work.data.workId}}'] {
+            view-transition-name: {{work.data.workId}};
+          }
+        }
+      </style>
+    </li>
+  {% endfor %}
+</ul>

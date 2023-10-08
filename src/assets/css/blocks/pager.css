@@ -1,0 +1,12 @@
+.pager {
+  --gutter: 0.25rem;
+  --cluster-horizontal-alignment: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+.pager a {
+  display: inline-flex;
+  justify-content: center;
+  margin: 0;
+  min-width: 1.5rem;
+}

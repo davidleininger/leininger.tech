@@ -1,0 +1,15 @@
+---
+layout: layouts/home.njk
+permalink: /lists/
+templateClass: content-grid
+---
+
+<article class="content-grid__item">
+  <h1>Lists</h1>
+  <p>I’m pretty opinionated. I make lists so I can go back and compare things to the past or remember when something sufficiently blew me away.</p>
+
+  {% set postslist = collections.lists | reverse %}
+  {% set listType = "ul" %}
+  {% set showTags = false %}
+  {% include "postslist.njk" %}
+</article>

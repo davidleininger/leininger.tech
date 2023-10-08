@@ -1,0 +1,13 @@
+<footer class="site-footer">
+  <nav aria-label="Social Links" class="social-links cluster">
+    {%- for link in navigation.socialLinks %}
+      <a href="{{ link.url | url }}" aria-label="{{ link.name }}">{% include "../icons/" + link.network + ".njk" %}</a>
+    {%- endfor %}
+  </nav>
+  <nav aria-label="Secondary" class="site-links cluster">
+    {%- for link in navigation.secondary %}
+      <a href="{{ link.url | url }}">{{ link.text }}</a>
+    {%- endfor %}
+  </nav>
+  <p class="copyright">&copy; David Leininger {% year %}</p>
+</footer>

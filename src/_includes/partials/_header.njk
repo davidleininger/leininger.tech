@@ -1,0 +1,17 @@
+<header>
+  <nav class="primary-nav">
+    {% include "partials/_logo.njk" %}
+    <ul class="nav cluster" role="list">
+      {%- for entry in collections.all | eleventyNavigation %}
+        <li class="nav-item">
+          <a {% if entry.url == page.url %}aria-current="page"{% endif %} data-link="{{ entry.title }}" href="{{ entry.url | url }}" class="nav-link{% if entry.url == page.url %} active{% endif %}">
+            {{ entry.title }}
+          </a>
+        </li>
+      {%- endfor %}
+    </ul>
+    <button id="colorToggle" class="toggle" aria-label="Dark Mode Toggle" onclick="setDarkModeClass()">
+      {% include "partials/_toggle.njk" %}
+    </button>
+  </nav>
+</header>

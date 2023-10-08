@@ -1,0 +1,79 @@
+---
+layout: layouts/contact.njk
+permalink: /contact/
+eleventyNavigation:
+  key: contact
+  order: 4
+---
+
+<article class="flow contact">
+  <h1>Contact</h1>
+  <p class="prose">Got a question for me? Want to work with me? Want to tell me a joke?</p>
+
+  <form
+    name="contact"
+    method="post"
+    autocomplete="on"
+    action="/contact-success/"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+  >
+    <input type="hidden" name="form-name" value="contact"/>
+    <div class="visually-hidden" aria-hidden="true">
+      <label>
+        Don’t fill this out if you’re human: <input name="bot-field" tabindex="-1"/>
+      </label>
+    </div>
+    <div class="contact-name form-item">
+      <label for="name">Name</label>
+      <input
+          id="name"
+          type="text"
+          name="name"
+          error="I need to know who you are..."
+          class="flex-1"
+          required
+        >
+    </div>
+    <div class="contact-email form-item">
+      <label for="email">Email</label>
+      <input
+          id="email"
+          type="email"
+          name="email"
+          required class="flex-1"
+          error="I need your email to know who to reply to..."
+          required
+        >
+    </div>
+    <div class="contact-message form-item">
+      <label for="message">Message</label>
+      <textarea
+          id="message" name="message" required class="flex-1" error="Listen, you gotta fill this thing out if you want to submit it. I mean seriously, what the h*ck..."></textarea>
+    </div>
+    <button type="submit">
+      <span>Send</span>
+    </button>
+  </form>
+</article>
+<script>
+  const inputs = document.querySelectorAll("input, textarea");
+
+  inputs.forEach(input => {
+    input.addEventListener("change", () => {
+      input
+        .classList
+        .remove("error");
+      input.setCustomValidity("");
+    });
+    input.addEventListener("invalid", event => {
+      input
+        .classList
+        .add("error");
+      input.setCustomValidity(input.getAttribute("error"));
+    });
+    input.addEventListener("blur", function () {
+      input.checkValidity();
+    });
+  });
+</script>

@@ -1,0 +1,120 @@
+{% set assetHash = global.random() %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or metadata.title }}</title>
+    <meta name="description" content="{{ description or metadata.description }}">
+    <meta name="generator" content="{{ eleventy.generator }}">
+
+    <link rel="stylesheet" href="/assets/css/global.css?{{ assetHash }}"/>
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f1c23">
+    <meta name="msapplication-TileColor" content="#0f1c23">
+
+    <meta name="theme-color" content="#5fb3b3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#47a0a0" media="(prefers-color-scheme: dark)">
+  </head>
+  <body class="dark">
+    <script>
+      var dark;
+
+      (function () {
+        // Change these if you use something different in your hook.
+        var storageKey = 'isDark';
+        var classNameDark = 'dark';
+
+        function setClassOnDocumentBody(darkMode) {
+          if (darkMode) {
+            document
+              .body
+              .classList
+              .add(classNameDark);
+          } else {
+            document
+              .body
+              .classList
+              .remove(classNameDark);
+          }
+        }
+
+        var preferDarkQuery = '(prefers-color-scheme: dark)';
+        var mql = window.matchMedia(preferDarkQuery);
+        var supportsColorSchemeQuery = mql.media === preferDarkQuery;
+        let localStorageTheme = null;
+        try {
+          localStorageTheme = localStorage.getItem(storageKey);
+        } catch (err) {}
+        var localStorageExists = localStorageTheme !== null;
+        if (localStorageExists) {
+          localStorageTheme = JSON.parse(localStorageTheme);
+        }
+
+        // Determine the source of truth
+        if (localStorageExists) {
+          // source of truth from localStorage
+          dark = localStorageTheme
+          setClassOnDocumentBody(localStorageTheme)
+        } else if (supportsColorSchemeQuery) {
+          // source of truth from system
+          setClassOnDocumentBody(mql.matches)
+          dark = mql
+            .matches
+            localStorage
+            .setItem(storageKey, mql.matches)
+        } else {
+          // default to dark - it's just better
+          dark = true
+          localStorage.setItem(storageKey, dark)
+        }
+      })();
+    </script>
+    <a href="#content" class="skip-to-content">Skip to content</a>
+    <div class="page-border">
+      <div class="page-wrapper">
+        {% include "partials/_header.njk" %}
+
+        <div id="content">
+          <main {% if templateClass %} class="{{ templateClass }} region"{% endif %}>
+            {{ content | safe }}
+          </main>
+        </div>
+
+        {% include "partials/_footer.njk" %}
+      </div>
+    </div>
+
+    <!-- Current page: {{ page.url | url }} -->
+    <script>
+      const toggleBtn = document.getElementById('colorToggle');
+
+      function setDarkModeClass() {
+        const nextDark = !dark;
+        if (nextDark === false) {
+          document
+            .body
+            .classList
+            .remove('dark');
+          toggleBtn.setAttribute('aria-pressed', 'false');
+        } else {
+          document
+            .body
+            .classList
+            .add('dark');
+          toggleBtn.setAttribute('aria-pressed', 'true');
+        }
+
+        localStorage.setItem('isDark', nextDark)
+        dark = nextDark;
+      }
+    </script>
+  </body>
+</html>

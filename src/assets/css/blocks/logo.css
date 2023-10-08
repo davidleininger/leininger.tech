@@ -1,0 +1,138 @@
+/* ---
+  Logo
+--- */
+.logo {
+  backface-visibility: hidden;
+  background-color: var(--color-teal);
+  color: var(--color-black);
+  display: flex;
+  height: 3rem;
+  margin: -8px auto 0 -8px;
+  transition: background 0.15s cubic-bezier(0.79, 0.45, 0.37, 0.66);
+  width: 16rem;
+}
+.logo:hover,
+.logo:focus,
+.logo:active {
+  background-color: var(--color-purple);
+}
+.dark .logo:hover,
+.dark .logo:focus,
+.dark .logo:active {
+  background-color: var(--color-yellow);
+}
+.logo::before,
+.logo::after {
+  content: '';
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  backface-visibility: hidden;
+}
+.logo::before {
+  background: linear-gradient(
+    to bottom,
+    #a78bfa 50px,
+    #a385fa,
+    #9f7ef9,
+    #9b77f9,
+    #9771f8,
+    #936af8,
+    #8f63f7,
+    #8b5cf6
+  );
+  z-index: -2;
+}
+.dark .logo::before {
+  background: linear-gradient(
+    to bottom,
+    #fac863 50px,
+    #f8c460,
+    #f3ba58,
+    #ecac4e,
+    #e59d43,
+    #de903a,
+    #d88634,
+    #d68232
+  );
+  z-index: -2;
+}
+.logo::after {
+  background: linear-gradient(
+    to bottom,
+    #5fb3b3 50px,
+    #5cb0b0,
+    #53a9a9,
+    #47a0a0,
+    #399696,
+    #2b8c8d,
+    #1f8687,
+    #1a8384
+  );
+  transition: opacity 0.15s cubic-bezier(0.79, 0.45, 0.37, 0.66);
+  z-index: -1;
+}
+.logo:hover::after,
+.logo:active::after {
+  opacity: 0;
+}
+.logo:focus::after {
+  opacity: 0;
+}
+.logo:focus:not(:focus-visible):not(:hover)::after {
+  opacity: 1;
+}
+.logo:focus-visible::after {
+  opacity: 0;
+}
+.logo:focus {
+  outline: none;
+}
+.logo:focus svg {
+  outline: 3px dotted var(--accent);
+  outline-offset: 3px;
+  z-index: 10;
+}
+.logo:focus:not(:focus-visible) svg {
+  outline: none;
+}
+.logo:focus-visible svg {
+  outline: 3px dotted var(--accent);
+  outline-offset: 3px;
+  z-index: 10;
+}
+
+@media (dynamic-range: high) {
+  .logo {
+    background-color: var(--color-teal-hd);
+    color: var(--color-black-hd);
+  }
+  .logo:hover,
+  .logo:focus,
+  .logo:active {
+    background-color: var(--color-purple-hd);
+  }
+  .dark .logo:hover,
+  .dark .logo:focus,
+  .dark .logo:active {
+    background-color: var(--color-yellow-hd);
+  }
+  .logo::before {
+    background: linear-gradient(
+      to bottom in oklab,
+      var(--color-purple-hd) 50px, var(--color-purple-dark-hd) 100%
+    );
+  }
+  .dark .logo::before {
+    background: linear-gradient(
+      to bottom in oklab,
+      var(--color-yellow-hd) 50px, var(--color-yellow-dark-hd) 100%
+    );
+  }
+  .logo::after {
+    background: linear-gradient(
+      to bottom in oklab,
+      var(--color-teal-hd) 50px, var(--color-teal-dark-hd) 100%
+    );
+  }
+}

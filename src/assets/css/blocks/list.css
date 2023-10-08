@@ -1,0 +1,59 @@
+.ldt-list {
+  --gutter: var(--space-xs);
+}
+.ldt-list ol {
+  counter-reset: list_counter var(--list-reset, 0);;
+}
+.ldt-list :is(ul, ol) {
+  margin-inline: 0;
+  padding-inline: 0;
+}
+.list-layout .ldt-list li {
+  font-weight: 600;
+}
+.ldt-list li {
+  align-items: baseline;
+  counter-increment: list_counter;
+  display: grid;
+  grid-template-columns:  auto 1fr;
+  grid-template-rows: auto auto;
+  font-size: 2.25rem;
+}
+.ldt-list li + li {
+  margin-top: var(--space-sm);
+}
+.ldt-list.reversed ol li {
+  counter-increment: list_counter -1;
+}
+.ldt-list li .description {
+  color: var(--primary);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  grid-column: 2 / -1;
+  grid-row: 2 / -1;
+}
+.ldt-list .switcher {
+  margin-top: var(--space-xs);
+}
+.ldt-list li::before {
+  color: var(--accent);
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  font-family: Cartograph,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  font-variant-numeric: tabular-nums;
+  margin-right: 1.5rem;
+}
+.ldt-list ol li::before {
+  content: counter(list_counter);
+}
+.ldt-list ul li::before {
+  content: '•';
+}
+
+.ldt-list[data-variant="article"] li {
+  font-size: var(--text-base);
+}
+.ldt-list[data-variant="article"] li::before {
+  font-size: 1.5em;
+  margin-right: 1rem;
+}

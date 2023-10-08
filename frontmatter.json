@@ -1,0 +1,87 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "11ty",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "src",
+      "path": "[[workspace]]/src",
+      "originalPath": "[[workspace]]/src"
+    },
+    {
+      "title": "broadway",
+      "path": "[[workspace]]/src/lists/broadway",
+      "originalPath": "[[workspace]]/src/lists/broadway"
+    },
+    {
+      "title": "halloween",
+      "path": "[[workspace]]/src/lists/halloween",
+      "originalPath": "[[workspace]]/src/lists/halloween"
+    },
+    {
+      "title": "movies",
+      "path": "[[workspace]]/src/lists/movies",
+      "originalPath": "[[workspace]]/src/lists/movies"
+    },
+    {
+      "title": "pizza",
+      "path": "[[workspace]]/src/lists/pizza",
+      "originalPath": "[[workspace]]/src/lists/pizza"
+    },
+    {
+      "title": "soda",
+      "path": "[[workspace]]/src/lists/soda"
+    }
+  ],
+  "frontMatter.taxonomy.tags": [
+    "Branding",
+    "Design",
+    "Development"
+  ],
+  "frontMatter.taxonomy.categories": []
+}

@@ -1,0 +1,59 @@
+{
+  "title": "Text Sizes",
+  "description": "A minimum and maximum text size size allows you to pick the right size from a ratio, depending on the context size. The min and max sizes are in pixels and should be converted to appropiate sizes, per context. For example, for web, the should be converted to REM units (pixelSize / baseSize)",
+  "meta": {
+    "scaleGenerator": "https://utopia.fyi/type/calculator?c=320,16,1.2,1350,20,1.333,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l"
+  },
+  "items": [
+    {
+      "name": "xs",
+      "min": 12.5,
+      "max": 14
+    },
+    {
+      "name": "SM",
+      "min": 13.33,
+      "max": 15
+    },
+    {
+      "name": "Base",
+      "min": 16,
+      "max": 20
+    },
+    {
+      "name": "MD",
+      "min": 19.2,
+      "max": 26.66
+    },
+    {
+      "name": "LG",
+      "min": 23.04,
+      "max": 35.54
+    },
+    {
+      "name": "XL",
+      "min": 27.65,
+      "max": 47.37
+    },
+    {
+      "name": "2XL",
+      "min": 33.18,
+      "max": 63.15
+    },
+    {
+      "name": "3XL",
+      "min": 39.81,
+      "max": 84.17
+    },
+    {
+      "name": "4XL",
+      "min": 47.78,
+      "max": 112.2
+    },
+    {
+      "name": "5XL",
+      "min": 57.33,
+      "max": 149.57
+    }
+  ]
+}

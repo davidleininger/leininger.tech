@@ -1,0 +1,42 @@
+.prose :where(h2, h3, h4) + * {
+  --flow-space: var(--space-sm-md);
+}
+
+:where(.prose :not(.taglist), .pager) a{
+  backface-visibility: visible;
+  box-shadow: inset 0 -6px 0px -0px var(--subtle);
+  color: var(--primary);
+  margin: 0 -3px;
+  padding: 0 3px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+:where(.prose :not(.taglist), .pager) a:hover, .pager a[aria-current="page"] {
+  box-shadow: inset 0 -1px 0px 0px var(--accent-dark);
+  color: var(--accent);
+}
+
+.prose blockquote {
+  border-inline-start: 10px solid var(--primary);
+  padding: var(--space-md-lg);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--text-lg);
+}
+
+.prose blockquote > * + * {
+  margin-top: var(--space-md-lg);
+}
+
+.prose blockquote :last-child {
+  font-family: var(--font-base);
+  font-style: normal;
+  font-size: var(--text-md);
+}
+
+.prose .meta {
+  font-size: var(--text-sm);
+}

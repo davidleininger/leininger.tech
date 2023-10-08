@@ -1,0 +1,81 @@
+---
+layout: layouts/home.njk
+permalink: /work/
+pagetitle: Work - {{ site.title }}
+templateClass: work wrapper
+eleventyNavigation:
+  key: work
+  order: 2
+---
+
+<div class="cluster" style="--cluster-vertical-alignment: baseline;">
+  <h1>Work</h1>
+  <ul class="work-filter" role="list" aria-label="Filter work by type">
+    <li>
+      <button class="filter active">All</button>
+    </li>
+    <li>
+      <button class="filter">Branding</button>
+    </li>
+    <li>
+      <button class="filter">Design</button>
+    </li>
+    <li>
+      <button class="filter">Development</button>
+    </li>
+  </ul>
+</div>
+
+{% set worklist = collections.work | orderSort('order') %}
+{% set showDate = false %}
+{% include "worklist.njk" %}
+
+<script>
+  const worklist = document.querySelector('.worklist');
+  const worklistItems = worklist.querySelectorAll('.work-item');
+  const filterButtons = document.querySelectorAll('.filter');
+
+  filterButtons.forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      const filter = button.textContent;
+      console.log(filter);
+      filterButtons.forEach(function (button) {
+        button
+          .classList
+          .remove('active');
+      });
+      button
+        .classList
+        .add('active');
+      if (
+        document
+        ?.startViewTransition) {
+        document.startViewTransition(() => handleFilter(filter))
+      } else {
+        handleFilter(filter);
+      }
+    });
+  });
+
+  function handleFilter(filter) {
+    worklistItems.forEach(function (item) {
+      const itemFilters = item
+        .dataset
+        .tags
+        .split(' ');
+      if (filter === 'All') {
+        item
+          .classList
+          .remove('hide');
+      } else if (itemFilters.includes(filter)) {
+        item
+          .classList
+          .remove('hide');
+      } else {
+        item
+          .classList
+          .add('hide');
+      }
+    });
+  }
+</script>

@@ -1,0 +1,56 @@
+@font-face {
+  font-family: Cartograph;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/CartographCF-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: Cartograph;
+  font-style: bold;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/CartographCF-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: Marcher;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/marcher-light.woff2') format('woff2');
+}
+@font-face {
+  font-family: Marcher;
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/marcher-regularitalic.woff2') format('woff2');
+}
+@font-face {
+  font-family: Marcher;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/marcher-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: Marcher;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/marcher-regularitalic.woff2') format('woff2');
+}
+@font-face {
+  font-family: Marcher;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/marcher-semibold.woff2') format('woff2');
+}
+@font-face {
+  font-family: RecoletaBold;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/Recoleta-Bold.woff2') format('woff2');
+}

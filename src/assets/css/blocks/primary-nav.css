@@ -1,0 +1,43 @@
+.primary-nav {
+  display: grid;
+  grid-template-areas: "logo toggle" "nav nav";
+  grid-template-columns:  1fr auto;
+  padding-bottom: 0.325rem;
+  position: relative;
+  width: 100%;
+}
+.primary-nav::after {
+  top: 100%;
+  background-color: var(--bg);
+  content: '';
+  inset: 0;
+  position: absolute;
+  transform: translateY(100%);
+  transition: transform 0.75s var(--bounce-out) 0.25s;
+  z-index: -1;
+}
+.logo {
+  grid-area: logo;
+}
+.nav {
+  --gutter: 0;
+  grid-area: nav;
+}
+.nav li {
+  width: auto;
+}
+#colorToggle {
+  grid-area: toggle;
+}
+@media screen and (min-width: 40rem) {
+  .primary-nav {
+    background: transparent;
+    grid-template-areas: "logo nav toggle";
+    grid-template-columns:  1fr auto auto;
+    padding-bottom: 0;
+  }
+  .primary-nav::after {
+    transform: translateY(0);
+    transition: transform 0.75s var(--bounce-out);
+  }
+}

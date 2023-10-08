@@ -1,0 +1,25 @@
+.taglist {
+  --flow-space: 0.25em;
+  --gutter: 0.4em;
+
+  color: var(--primary);
+  display: inline-flex;
+  gap: 0.5em;
+}
+.taglist {
+  font-size: var(--text-sm);
+}
+.taglist a {
+  border: 1px solid currentColor;
+  border-radius: 0.125em;
+  color: var(--primary);
+  padding: 0.125em 0.25em;
+  position: relative;
+  text-decoration: none;
+}
+.taglist a:hover {
+  color: var(--accent);
+}
+.taglist > span:not(:last-child)::after {
+  content: ", ";
+}

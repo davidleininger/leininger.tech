@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+templateClass: content-grid
+---
+<article class="flow prose">
+  <h1>{{ title }}</h1>
+
+  <p class="meta">
+    <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time> &bull; {{ content | readingTime }}
+  </p>
+
+  {% include "partials/_taglist.njk" %}
+
+  {{ content | safe }}
+</article>
+
+<aside class="btn-group-wrapper">
+  <div class="btn-group">
+    <a href="/words" class="ldt-btn">
+      <span>Back to Words</span></a>
+    <a href="/til" class="ldt-btn">
+      <span>Back to TIL</span></a>
+  </div>
+</aside>

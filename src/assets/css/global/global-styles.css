@@ -1,0 +1,129 @@
+body {
+  color: var(--base);
+  background-color: var(--bg);
+  font-size: var(--text-base);
+  font-family: var(--font-base);
+  font-weight: 300;
+  caret-color: var(--accent);
+}
+
+/* Base typesetting */
+:is(h1, h2, h3) {
+  line-height: 1;
+  font-family: var(--font-mono);
+}
+
+h1 {
+  color: var(--headline);
+  font-size: var(--text-2xl);
+  font-family: var(--font-display);
+}
+
+h2,
+h3 {
+  color: var(--primary);
+}
+
+h2 {
+  font-size: var(--text-lg);
+}
+
+h3 {
+  font-size: var(--text-md);
+}
+
+/* Set line lengths */
+p,
+li,
+blockquote:not([class]) {
+  letter-spacing: 0.005em;
+  line-height: 1.6;
+  max-width: 60ch;
+  width: 100%;
+}
+
+.meta {
+  color: var(--primary);
+  font-size: var(--text-xs);
+}
+
+/* More generic elements */
+blockquote:not([class]) {
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+}
+
+/* Markdown blockquuote:not([class])s aren't ideal, so we're presuming the person quoted is the last p */
+blockquote:not([class]) p:last-of-type {
+  font-family: var(--font-base);
+  font-weight: normal;
+}
+
+/* List Bois */
+[role='list'] {
+  margin: 0;
+  padding: 0;
+}
+:is(ol, ul) {
+  --flow-space: 1em;
+}
+
+/* Base interactive elements */
+a,
+button {
+  touch-action: manipulation;
+}
+
+:focus {
+  outline: 3px var(--primary) dotted;
+  outline-offset: 3px;
+}
+:focus:not(:focus-visible) {
+  outline-color: transparent;
+  outline-style: solid;
+}
+:focus-visible {
+  outline: 3px var(--primary) dotted;
+  outline-offset: 3px;
+}
+
+:target {
+  scroll-margin-top: 2ex;
+}
+
+main:focus {
+  outline: none;
+}
+
+/* Base selection styles that invert whatever colours are rendered */
+::selection {
+  background: rgba(197, 165, 197, 0.99);
+  color: theme('colors.black');
+}
+.dark ::selection {
+  background: rgba(250, 200, 99, 0.99);
+}
+
+/* Base grid and creates the border that changes on logo hover */
+.page-wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  padding: 8px;
+  position: relative;
+  transition: margin 0.3s ease-in;
+}
+
+input, textarea {
+  color: var(--base);
+  padding: 0.25rem 0.5rem;
+}
+
+#content {
+  background-color: var(--bg);
+  padding: var(--gutter);
+}
+
+.meta.cluster {
+  --gutter: 0.325rem;
+}

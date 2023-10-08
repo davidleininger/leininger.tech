@@ -1,0 +1,21 @@
+{
+  "title": "leininger.tech",
+  "url": "https://leininger.tech",
+  "language": "en",
+  "description": "I design and build things for the internets. I like learning and sometimes I write about it.",
+  "feed": {
+    "subtitle": "A web development blog written by @davidleininger.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://example.com/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://example.com/feed/feed.json"
+  },
+  "author": {
+    "name": "David Leininger",
+    "email": "david@leininger.tech",
+    "url": "https://leininger.tech/about/"
+  }
+}

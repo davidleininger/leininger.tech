@@ -1,0 +1,9 @@
+.flow > * + * {
+  margin-top: var(--flow-space, 1.5em);
+}
+.flow > :where(h1, h2, h3) + * {
+  --flow-space: 0.5em;
+}
+.flow > * + .meta {
+  --flow-space: 0.25em;
+}

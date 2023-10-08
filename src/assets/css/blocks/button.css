@@ -1,0 +1,72 @@
+/* ---
+  Button / Button Link
+--- */
+.ldt-btn,
+button:where(:not(.toggle, .filter)) {
+  --spacing: 0.5rem;
+  --transition: 0.25s;
+  background: var(--primary);
+  color: var(--primary);
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  & span {
+    align-items: center;
+    background: var(--bg);
+    box-shadow: inset 0 0 0 2px var(--primary);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding: 0.25rem 1rem;
+    position: relative;
+    transform: translate(calc(-1 * var(--spacing)), calc(-1 * var(--spacing)));
+    transition: transform 0.2s ease-in;
+    &::before,
+    &::after {
+      border-style: solid;
+      color: var(--primary);
+      content: '';
+      height: 0;
+      position: absolute;
+      transform: scale(1);
+      transition: transform 0.2s ease-in;
+      width: 0;
+    }
+    &::before {
+      border-width: 0 var(--spacing) var(--spacing) 0;
+      border-color: transparent transparent var(--primary) transparent;
+      right: calc(-1 * var(--spacing));
+      top: 0;
+      transform-origin: top left;
+    }
+    &::after {
+      border-width: var(--spacing) 0 0 var(--spacing);
+      border-color: var(--primary) transparent transparent transparent;
+      bottom: calc(-1 * var(--spacing));
+      left: 0;
+      transform-origin: top left;
+    }
+    &:hover,
+    &:focus {
+      transform: translate(0, 0);
+      transition-timing-function: ease-out;
+      &::before,
+      &::after {
+        transform: scale(0);
+        transition-timing-function: ease-out;
+      }
+    }
+  }
+  &:focus span {
+    transform: translate(0, 0);
+    &::before,
+    &::after {
+      transform: scale(0);
+    }
+  }
+}
+.contact :where(.ldt-btn, ,
+button:where(:not(.toggle))) {
+  display: block;
+  width: max-content;
+}

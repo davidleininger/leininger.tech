@@ -1,0 +1,184 @@
+/*********************************************************
+* Prism
+*/
+:root {
+  --code-bg: #0f1c23;
+  --comment: #65737e;
+  --highlight: #4f5b66;
+  --selected: #356367;
+  --punctuation: #5fb3b3;
+  --operator: #5fb3b3;
+  --keyword: #c5a5c5;
+  --constant: #eb9a6d;
+  --selector: #99c794;
+  --string: #99c794;
+  --foreground: #d8dee9;
+  --function: #5a9bcf;
+}
+.language-html {
+  --constant: #ed6f7d;
+  --selector: #c5a5c5;
+  --operator: #99c794;
+  --keyword: #99c794;
+}
+.language-css,
+.language-scss {
+  --foreground: #eb9a6d;
+  --constant: #fac863;
+  --selector: #ed6f7d;
+  --operator: #99c794;
+}
+.dark {
+  --code-bg: #1b2b34;
+}
+pre[class*='language-'],
+code[class*='language-'] {
+  color: var(--foreground);
+  font-size: 0.9em;
+  text-shadow: none;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  direction: ltr;
+  margin-bottom: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+pre[class*='language-']::selection,
+code[class*='language-']::selection,
+pre[class*='language-']::mozselection,
+code[class*='language-']::mozselection {
+  text-shadow: none;
+  background: var(--selected);
+}
+@media print {
+  pre[class*='language-'],
+  code[class*='language-'] {
+    text-shadow: none;
+  }
+}
+pre[class*='language-'] {
+  background: var(--code-bg);
+  border-left: 8px solid var(--primary);
+  overflow: auto;
+  padding: 1em;
+}
+article :not(pre) > code[class*='language-'] {
+  padding: 0.1em 0.5em;
+  border-radius: 0.3em;
+  color: var(--foreground);
+  background: var(--code-bg);
+}
+article :not(pre) > code {
+  background: var(--foreground);
+  border-radius: 0.3em;
+  color: var(--selected) !important;
+  font-size: 0.875em;
+  font-weight: normal;
+  padding: 0.1em 0.25em;
+}
+.dark article :not(pre) > code {
+  background: var(--code-bg);
+  color: var(--accent) !important;
+}
+article code::before,
+article code::after {
+  display: none;
+}
+/*********************************************************
+* Tokens
+*/
+.namespace {
+  opacity: 0.7;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--comment);
+}
+.token.punctuation {
+  color: var(--punctuation);
+}
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--constant);
+}
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--selector);
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--operator);
+  background: var(--code-bg);
+}
+.token.atrule .token.rule,
+.token.attr-value,
+.token.keyword {
+  color: var(--keyword);
+}
+.token.function {
+  color: var(--function);
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--foreground);
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
+.token.atrule {
+  color: var(--foreground);
+}
+/*********************************************************
+* Line highlighting
+*/
+pre[data-line] {
+  position: relative;
+}
+pre[class*='language-'] > code[class*='language-'] {
+  position: relative;
+  z-index: 1;
+}
+.line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: var(--highlight);
+  z-index: 0;
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}

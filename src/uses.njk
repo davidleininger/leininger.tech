@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+title: uses
+templateClass: content-grid wrapper
+---
+
+<article class="flow prose">
+  <h1>Uses</h1>
+  <p>Just like everyone else, this was inspired by <a href="https://wesbos.com/uses">Wes Bos</a>. These are things I use on a daily basis that make my life better, easier, or opinionated. You probably don’t really care, but I bet I’ve got a trick or two you don’t know about...</p>
+
+  {% for cat in uses.categories %}
+    <h2>{{ cat.name }}</h2>
+    {% for item in cat.items %}
+      <h3 class="text-white">{{ item.name }}
+        {% if item.link %}
+          <a href="{{item.link}}">Link</a>
+        {% endif %}
+      </h3>
+      <p>{{ item.description | safe }}</p>
+    {% endfor %}
+  {% endfor %}
+</article>

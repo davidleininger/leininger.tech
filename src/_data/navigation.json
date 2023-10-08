@@ -1,0 +1,40 @@
+{
+  "mainNav": [
+    { "url": "/about", "text": "about", "inTopNav": true },
+    { "url": "/work", "text": "work", "inTopNav": true },
+    { "url": "/words", "text": "words", "inTopNav": true },
+    { "url": "/contact", "text": "contact", "inTopNav": true }
+  ],
+  "secondary": [
+    { "url": "/feed/feed.xml", "text": "rss", "inTopNav": false },
+    { "url": "/uses", "text": "uses", "inTopNav": false },
+    { "url": "/lists", "text": "lists", "inTopNav": false }
+  ],
+  "socialLinks": [
+    {
+      "network": "github",
+      "name": "GitHub",
+      "url": "https://github.com/davidleininger"
+    },
+    {
+      "network": "codepen",
+      "name": "CodePen",
+      "url": "https://codepen.io/davidleininger"
+    },
+    {
+      "network": "dribbble",
+      "name": "Dribbble",
+      "url": "https://dribbble.com/davidleininger"
+    },
+    {
+      "network": "mastodon",
+      "name": "Mastodon",
+      "url": "https://fosstodon.org/@davidleininger"
+    },
+    {
+      "network": "twitter",
+      "name": "Twitter",
+      "url": "https://twitter.com/davidleininger"
+    }
+  ]
+}

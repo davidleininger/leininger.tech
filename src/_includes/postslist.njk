@@ -1,0 +1,36 @@
+{% if listType === "ul" %}
+  <ul class="postlist" role="list">
+  {% else %}
+    <ol reversed class="postlist" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}" role="list">
+    {% endif %}
+    {% for post in postslist %}
+      <li class="postlist__item{% if post.url == url %} postlist__item-active{% endif %} link-overlay">
+        {% if (showThumbnail) and (post.data.thumbnail) %}
+          <img class="postlist__thumbnail" src="{{ post.url | url }}/{{ post.data.thumbnail | url }}" alt="{{ post.data.title }} Logo">
+        {% endif %}
+        <div class="postlist__content">
+          <a href="{{ post.url | url }}" data-main-link="true" class="postlist__link">
+            {% if post.data.title %}
+              {{ post.data.title }}
+              {% include "icons/angle.njk" %}
+            {% else %}
+              <code>{{ post.url }}</code>
+            {% endif %}
+          </a>
+          {% if showDate !== false %}
+            <time class="postlist__date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+            {% if post.data.TILIndex %}
+              <span class="postlist__info"> • TIL #{{post.data.TILIndex}}</span>
+            {% endif %}
+          {% endif %}
+          {% if showTags !== false %}
+            {% set tags = post.data.tags %}
+            {% include "partials/_taglist.njk" %}
+          {% endif %}
+          <div></li>
+        {% endfor %}
+        {% if listType === "ul" %}
+        </ul>
+      {% else %}
+    </ol>
+  {% endif %}

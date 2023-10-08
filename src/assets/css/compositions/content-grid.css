@@ -1,0 +1,57 @@
+/* ---
+   Content Grid / Button Group
+ --- */
+.content-grid {
+  --wrapper-max-width: 100%;
+  display: grid;
+  grid-gap: var(--gutter);
+  grid-template-areas: 'body' 'btns';
+  grid-template-columns: 1fr;
+}
+.content-grid article {
+  grid-area: body;
+  min-width: 0;
+}
+.btn-group-wrapper {
+  grid-area: btns;
+  margin-top: var(--gutter);
+}
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter);
+}
+@media screen and (min-width: 10rem) {
+  .btn-group {
+    flex-direction: row;
+    & * {
+      flex: 1;
+    }
+  }
+}
+@media screen and (min-width: 48rem) {
+  .content-grid {
+    grid-template-areas: 'body btns';
+    grid-template-columns: minmax(auto, 60ch) 1fr;
+  }
+  .btn-group-wrapper {
+    margin-top: 0;
+  }
+  .btn-group {
+    align-items: end;
+    flex-direction: column;
+    position: sticky;
+    top: 2rem;
+
+    & * {
+      flex: auto;
+      width: max-content;
+    }
+  }
+}
+@media screen and (min-width: 64rem) {
+  .content-grid {
+    grid-template-areas: '. body btns';
+    grid-template-columns: 1fr minmax(auto, 60ch) 1fr;
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "title": "Fonts",
+  "description": "Each array of fonts creates a priority-based order. The first font in the array should be the ideal font, followed by sensible, web-safe fallbacks",
+  "items": [
+    {
+      "name": "Base",
+      "description": "System fonts for body copy and globally set text.",
+      "value": [
+        "Marcher",
+        "system-ui",
+        "BlinkMacSystemFont",
+        "-apple-system",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        "sans-serif"
+      ]
+    },
+    {
+      "name": "Mono",
+      "description": "Titles and Code",
+      "value": [
+        "Cartograph",
+        "Menlo",
+        "Monaco",
+        "Consolas",
+        "\"Liberation Mono\"",
+        "\"Courier New\"",
+        "monospace"
+      ]
+    },
+    {
+      "name": "Display",
+      "description": "Big Ole Titles",
+      "value": [
+        "RecoletaBold",
+        "Menlo",
+        "Monaco",
+        "Consolas",
+        "\"Liberation Mono\"",
+        "\"Courier New\"",
+        "monospace"
+      ]
+    }
+  ]
+}

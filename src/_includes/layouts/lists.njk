@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+templateClass: content-grid list-layout
+---
+<article class="flow prose">
+  <h1>{{ title }}</h1>
+
+  <p class="meta">
+    <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time> &bull; {{ content | readingTime }}
+  </p>
+
+  {%- if tags | filterTagList | length -%}
+    {% include "partials/_taglist.njk" %}
+  {%- endif -%}
+
+  <div class="ldt-list flow {% if reversed %}reversed{% endif %}" style="--list-reset: {{counterReset}}">
+    {{ content | safe }}
+  </div>
+</article>
+
+<aside class="btn-group-wrapper">
+  <div class="btn-group">
+    <a href="/lists" class="ldt-btn">
+      <span>Back to Lists</span></a>
+  </div>
+</aside>

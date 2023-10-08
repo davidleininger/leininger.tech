@@ -1,0 +1,19 @@
+.work-filter {
+  display: flex;
+}
+.work-filter .filter {
+  background: transparent;
+  color: var(--primary);
+  transition: color 0.15s;
+}
+.work-filter .filter:hover {
+  color: var(--base);
+}
+.work-filter .filter.active {
+  color: var(--accent);
+}
+.work-filter li + li {
+  border-left: 1px solid var(--subtle);
+  margin-left: 0.75rem;
+  padding-left: 0.75rem;
+}

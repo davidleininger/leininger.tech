@@ -1,0 +1,25 @@
+---
+layout: layouts/home.njk
+eleventyComputed:
+  title: Words {% if pagination.pageNumber > 0 %} Page {{ pagination.pageNumber + 1 }}{% endif %} - Leininger.Tech
+eleventyNavigation:
+  key: words
+  order: 3
+pagination:
+  data: collections.words
+  size: 10
+  alias: posts
+  reverse: true
+permalink: "words{% if pagination.pageNumber > 0 %}/page-{{ pagination.pageNumber + 1}}{% endif %}/index.html"
+templateClass: content-grid
+---
+
+<article>
+  <h1>Words</h1>
+  <p>I like learning and <s>sometimes</s> hardly ever write about it. I’m trying to be better about that now.</p>
+
+  {% set postslist = posts %}
+  {% include "postslist.njk" %}
+
+  {% include "partials/_pager.njk" %}
+</article>

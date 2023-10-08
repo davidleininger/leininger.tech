@@ -1,0 +1,36 @@
+---
+layout: layouts/home.njk
+---
+
+<section role="region" aria-label="Introduction" class="welcome flow">
+  <h1 aria-label="Hello, I'm David Leininger">Hello, I'm David <span class="say-my-name">Leininger</span>.</h1>
+  <h2>I design and build things for the internets.</h2>
+  <p>I like learning and <s>sometimes</s> hardly ever write about it.</p>
+  <p class="small" aria-hidden="true">This is some small text.</p>
+</section>
+
+<div class="billboard">
+  <section class="words" aria-labelledby="recent-words">
+    <h2 id="recent-words">Somewhat Recent Words</h2>
+    {% set postslist = collections.words | head(-4) | reverse %}
+    {% set postslistCounter = collections.til | length %}
+    {% include "postslist.njk" %}
+
+    <p class="flex">
+      <a class="view-all" href="{{ '/words/' | url }}">see all</a>
+    </p>
+  </section>
+
+  <section class="work" aria-labelledby="featured-work">
+    <h2 id="featured-work">Featured Work</h2>
+    {% set postslist = collections.work | orderSort('order') | head(-3) | reverse %}
+    {% set postslistCounter = collections.work | length %}
+    {% set showDate = false %}
+    {% set showThumbnail = true %}
+    {% include "postslist.njk" %}
+
+    <p class="flex">
+      <a class="view-all" href="{{ '/work/' | url }}">see all</a>
+    </p>
+  </section>
+</div>

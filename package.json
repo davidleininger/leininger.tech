@@ -1,0 +1,53 @@
+{
+  "name": "leininger.tech",
+  "private": true,
+  "engines": {
+    "node": "18.x"
+  },
+  "version": "1.0.0",
+  "description": "Personal website for David Leininger.",
+  "main": ".eleventy.js",
+  "scripts": {
+    "start": "concurrently 'npm run serve' 'npm run css -- --watch'",
+    "serve": "npx @11ty/eleventy --serve",
+    "css": "npx postcss src/assets/css/global.css -o dist/assets/css/global.css",
+    "production": "NODE_ENV=production npx @11ty/eleventy && NODE_ENV=production npm run css",
+    "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
+    "debug": "DEBUG=* npx @11ty/eleventy"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/davidleininger/leininger.tech.git"
+  },
+  "author": "David Leininger",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-navigation": "^0.3.2",
+    "@11ty/eleventy-plugin-rss": "^1.1.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "concurrently": "^7.1.0",
+    "cssnano": "^5.1.7",
+    "postcss": "^8.4.13",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.1.0",
+    "postcss-import-ext-glob": "^2.0.1",
+    "postcss-js": "^4.0.0",
+    "slugify": "^1.6.5",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-img": "^2.0.0",
+    "eleventy-plugin-reading-time": "^0.0.1",
+    "html-minifier": "^4.0.0",
+    "luxon": "^2.3.1",
+    "markdown-it": "^12.3.0",
+    "markdown-it-anchor": "^8.4.1",
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-inline-wrapper": "^1.0.0",
+    "markdown-it-span": "^1.0.0",
+    "postcss-nesting": "^10.1.5",
+    "prettier": "^2.5.1"
+  }
+}
