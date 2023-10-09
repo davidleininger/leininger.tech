@@ -1,14 +1,14 @@
 {
-    "name": "Leininger.tech",
-    "short_name": "Leininger.tech",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#0f1c23",
-    "background_color": "#0f1c23",
-    "display": "standalone"
+  "name": "Leininger.tech",
+  "short_name": "Leininger.tech",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0f1c23",
+  "background_color": "#0f1c23",
+  "display": "standalone"
 }
