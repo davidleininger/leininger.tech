@@ -137,7 +137,7 @@ module.exports = function (eleventyConfig) {
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
-    templateFormats: ['md', 'njk', 'html', 'jpg', 'png', 'svg'],
+    templateFormats: ['md', 'njk', 'html', 'jpg', 'png', 'svg', 'webmanifest', 'xml', 'ico'],
     dir: {
       input: 'src',
       output: 'dist',
