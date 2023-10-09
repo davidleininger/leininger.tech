@@ -1,6 +1,6 @@
 body {
   color: var(--base);
-  background-color: var(--bg);
+  background-image: linear-gradient(to bottom, var(--primary) 0%, var(--primary-dark) 100%);
   font-size: var(--text-base);
   font-family: var(--font-base);
   font-weight: 300;
