@@ -6,7 +6,7 @@
     {% for post in postslist %}
       <li class="postlist__item{% if post.url == url %} postlist__item-active{% endif %} link-overlay">
         {% if (showThumbnail) and (post.data.thumbnail) %}
-          <img class="postlist__thumbnail" src="{{ post.url | url }}/{{ post.data.thumbnail | url }}" alt="{{ post.data.title }} Logo">
+          <img class="postlist__thumbnail" src="{{ post.url | url }}/{{ post.data.thumbnail | url }}" alt="{{ post.data.title }} Logo" width="80" height="80">
         {% endif %}
         <div class="postlist__content">
           <a href="{{ post.url | url }}" data-main-link="true" class="postlist__link">
