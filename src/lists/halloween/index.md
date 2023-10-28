@@ -1,7 +1,7 @@
 ---
 title: Halloween
-date: 2022-10-31
-counterReset: 2023
+date: 2023-10-27
+counterReset: 2024
 reversed: true
 ---
 
@@ -9,6 +9,7 @@ Every year since we've had kids we do a family halloween costume for Boo at the 
 
 _Oh, and before we get started. One rule we have is that every kid's fist Halloween is in the lobster costume._
 
+2023. The Little Mermaid <div class="description">Part of your world with King Triton, Ursala, Flounder, Ariel, Sebastian, and Scuttle<div class="switcher"><figure>![The little mermaid family halloween costume 2023.](./2023.jpg)</figure><figure>![kids costume 2022.](./2023-kids.jpg)</figure></div></div>
 2022. A League of Their Own <div class="description">Featuring Dorothy "Dottie" Hinson, Ernie Capadino (AAGPBL scout), Kit Keller, Jimmy Dugan, and Marla Hooch<div class="switcher"><figure>![family halloween costume 2022.](./2022.jpg)</figure><figure>![kids costume 2022.](./2022-kids.jpg)</figure></div></div>
 2021. Star Wars Portmanteaus <div class="description">Introducing Garth Vader, Big League Chewie, It's a (Lobster) Trap, General Leia Organic, and Rey Charles<div class="switcher"><figure>![family halloween costume 2021.](./2021.jpg)</figure><figure>![kids costume 2021.](./2021-kids.jpg)</figure></div></div>
 2020. Jurassic Park <div class="description">Starring Hammond, Grant, Ellie, and <a href="https://comicbook.com/movies/news/jurassic-park-world-t-rex-official-name-roberta/">Roberta</a> the T-Rex.<div class="switcher"><figure>![Jurrasic Park family halloween costume 2020.](./2020.jpg)</figure><figure>![close up 2020 costume.](./2020-closeup.jpg)</figure></div></div>
