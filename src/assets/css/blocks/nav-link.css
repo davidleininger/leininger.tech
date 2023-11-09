@@ -19,6 +19,7 @@ a.nav-link::after {
   background: var(--color-teal);
   color: var(--color-black);
   content: attr(data-link);
+  content: attr(data-link) / "";
   display: none;
   height: 100%;
   justify-content: center;
