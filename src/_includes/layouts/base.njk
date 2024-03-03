@@ -6,20 +6,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
-    <meta name="description" content="{{ description or metadata.description }}">
-    <meta name="generator" content="{{ eleventy.generator }}">
-
     <link rel="stylesheet" href="/assets/css/global.css?{{ assetHash }}"/>
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
-    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="preload" href="/assets/fonts/Recoleta-Bold.woff2" as="font" type="font/woff2">
     <link rel="preload" href="/assets/fonts/marcher-light.woff2" as="font" type="font/woff2">
     <link rel="preload" href="/assets/fonts/marcher-semibold.woff2" as="font" type="font/woff2">
     <link rel="preload" href="/assets/fonts/CartographCF-Bold.woff2" as="font" type="font/woff2">
+
+    <meta name="description" content="{{ description or metadata.description }}">
+    <meta name="generator" content="{{ eleventy.generator }}">
+
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f1c23">
     <meta name="msapplication-TileColor" content="#0f1c23">
@@ -123,7 +123,9 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BL4TX7T1XF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
 
       gtag('config', 'G-BL4TX7T1XF');
