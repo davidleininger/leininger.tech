@@ -9,9 +9,9 @@ source: http://caf.leininger.tech
 tags: [Branding, Design, Development]
 ---
 
-[https://caf.leininger.tech](Catholic.af) was a pet project between me and [Mike McBride](https://mikemcbride.dev), but sadly, it's dead now. It all started because we found `.af` domain names, and then the fun began. The goal was to create a space for Catholic creators to have a space to show off their work and contribute to Catholic charities. Essentially, we sell the good, recoup the cost, pay the designer, and donate the rest.
+[Catholic.af](https://caf.leininger.tech) was a pet project between me and [Mike McBride](https://mikemcbride.dev), but sadly, it's dead now. It all started because we found `.af` domain names, and then the fun began. The goal was to create a space for Catholic creators to have a space to show off their work and contribute to Catholic charities. Essentially, we sell the good, recoup the cost, pay the designer, and donate the rest.
 
-[https://caf.leininger.tech](Catholic.af) was a design and development playground and an experiment in Catholic culture. The first was a blast, but the second turned out basically as expected – hence why it isn't around anymore.
+[Catholic.af](https://caf.leininger.tech) was a design and development playground and an experiment in Catholic culture. The first was a blast, but the second turned out basically as expected – hence why it isn't around anymore.
 
 Both Mike and I are developers and we're always looking for a place to play around, make something cool, and have a little fun while we're at it. One of my favorite parts of the site was the hover effect on the main landing page:
 
