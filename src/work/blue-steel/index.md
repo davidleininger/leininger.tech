@@ -60,7 +60,7 @@ One of my favorite parts of the project was generating components. The first pla
 1. Generated web components, Vue, and React components for each icon
 1. Generated the icon page in the docs that allowed users to preview the icon and select the type of icons they wanted and copy or download the necessary code
 
-![Screen shot of the Blue Steel icon library with the Accessibility icon selected and the format set to SVG.](./bluesteel-screens.jpg)
+![Screen shot of the Blue Steel icon library with the Accessibility icon selected and the format set to SVG.](./bluesteel-icons.jpg)
 
 This was one of the most fun parts of this entire project. Since leaving WWT, I've built a very similar script and import for the New York Times design system.
 
