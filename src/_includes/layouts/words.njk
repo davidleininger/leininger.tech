@@ -6,7 +6,12 @@ templateClass: content-grid
   <h1>{{ title }}</h1>
 
   <p class="meta">
-    <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time> &bull; {{ content | readingTime }}
+    {% if edited %}
+    Uploaded: {% endif %}
+    <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+    {% if edited %}
+    &bull; <time datetime="{{ edited | htmlDateString }}">Edited: {{ edited | readableDate }}</time>
+    {% endif %} &bull; {{ content | readingTime }} read
   </p>
 
   {% include "partials/_taglist.njk" %}
