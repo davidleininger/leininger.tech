@@ -7,3 +7,6 @@
 .flow > * + .meta {
   --flow-space: 0.25em;
 }
+.flow > * + pre {
+  --flow-space: 1em;
+}
