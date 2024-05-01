@@ -1,9 +1,10 @@
 ---
 title: Attribute Selectors
 date: 2020-01-30
+edited: 2024-04-30
 ---
 
-It's always funny when people say to me, "I hate CSS." Sometimes I ask why, but most of the time I just move on disgusted. CSS is fun and I love learning more and more and more about it. I think one of the reasons people don't CSS is because there is so much too it, and so much nuance. It's similar to the english language: there, they're, their.
+It's always funny when people say to me, "I hate CSS." Sometimes I ask why, but most of the time I just move on disgusted. CSS is fun and I love learning more and more and more about it. I think one of the reasons people don't CSS is because there is so much to it, and so much nuance. It's similar to the english language: there, they're, their.
 
 One example of that nuance is Attribute Selectors. While pretty much everyone know you and use classes `.item`, ids `#logo`, and tags `div`, not everyone knows there are other ways to select elements. Attribute selectors allow you to select an item if it has a certain attribute or that that attribute has a certain value. Attribute selectors can give you a special treatment if a linke has `target="_blank"` to let a user know they are leaving your site. They can change a style if the file name you're linking to ends in `.pdf`.
 
@@ -62,6 +63,8 @@ By default, the strings inside attribute selectors are case sensitive. Simply ad
 _The above code is sniped from [CSS Tricks](https://css-tricks.com/attribute-selectors/#case-insensitve-attribute-selectors)._
 
 ## Specificity (spec·i·fic·i·ty)
-Arrtibute selectors are the same weight in specificity as a class. The way I like to think about it is 100 points for ids, 10 points for classes, and 1 point for tags. So for example: `#page a.link[href$='.pdf']` would be work 121 points. 100 for the `#page`, 10 for the `.link`, 10 for `[href$='.pdf']`, and 1 for `a`.
+Attribute selectors are the same weight in specificity as a class. Specificity seems complicated, but it's pretty simple when you see it broken down. There are three different levels of specificity: `id, classes, tags`. It's important to note that these are separate values and aren't numbers. This means that using 10 classes does not equal 1 id, and 11 classes isn't more specific than an id.
+
+Looking at an example using this understand: `#page a.link[href$='.pdf']` would equate to `1, 2, 1`. It does not equal 121, but rather three distinct levels, where each level has it's own specificity. For example `#page.home a.link[href$='.pdf']` would equate to `1, 3, 1` and be more specific than `#page a.link[href$='.pdf']`.
 
 And there you have it, Attribute Selectors. They are are super powerful and super under utilized. I'm hoping to use them more in my work.
