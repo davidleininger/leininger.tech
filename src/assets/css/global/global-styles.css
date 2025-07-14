@@ -1,7 +1,7 @@
 body {
   color: var(--base);
   background-image: linear-gradient(to bottom, var(--primary) 0%, var(--primary-dark) 100%);
-  font-size: var(--text-base);
+  font-size: var(--text-md);
   font-family: var(--font-base);
   font-weight: 300;
   caret-color: var(--accent);
@@ -15,7 +15,7 @@ body {
 
 h1 {
   color: var(--headline);
-  font-size: var(--text-2xl);
+  font-size: var(--text-3xl);
   font-family: var(--font-display);
 }
 

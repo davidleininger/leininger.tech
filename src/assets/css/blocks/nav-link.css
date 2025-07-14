@@ -2,6 +2,7 @@ a.nav-link{
   align-items: center;
   color: var(--color-black);
   display: flex;
+  font-size: var(--text-base);
   height: auto;
   overflow: hidden;
   padding: 0 var(--space-xs);
